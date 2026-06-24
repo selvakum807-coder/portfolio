@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamilselvi S | CSE Student & Software Developer Portfolio</title>
+  <meta name="description" content="Professional portfolio of Tamilselvi S, a dedicated Computer Science & Engineering student and aspiring software developer. View education, skills, projects, and contact details.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       1. DESIGN SYSTEM VARIABLES & THEMES
+       ========================================================================== */
+    :root {
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+    }
+
+    /* Dark Theme (Default) */
+    .dark-theme {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #131b2e;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-primary: #3b82f6; /* Royal Blue */
+      --accent-secondary: #06b6d4; /* Turquoise */
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --modal-bg: rgba(15, 23, 42, 0.95);
+      --input-bg: #0f172a;
+    }
+
+    /* Light Theme */
+    .light-theme {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --accent-primary: #2563eb;
+      --accent-secondary: #0d9488;
+      --accent-glow: rgba(37, 99, 235, 0.08);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+      --modal-bg: rgba(255, 255, 255, 0.95);
+      --input-bg: #ffffff;
+    }
+
+    /* ==========================================================================
+       2. GLOBAL STYLES & RESET
+       ========================================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    img, svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-primary);
+    }
+
+    ::selection {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    section {
+      padding: 100px 0 80px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .section-underline {
+      height: 4px;
+      width: 60px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    /* ==========================================================================
+       3. BUTTONS & UI COMPONENTS
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-primary);
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-card-action {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-card-action:hover {
+      background: var(--accent-primary);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-card-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       4. NAVBAR HEADER
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .navbar.scrolled {
+      background: var(--bg-primary);
+      padding: 12px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .nav-logo span {
+      color: var(--accent-primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-btn:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+    }
+
+    .theme-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .dark-theme .sun-icon { display: block; }
+    .dark-theme .moon-icon { display: none; }
+    .light-theme .sun-icon { display: none; }
+    .light-theme .moon-icon { display: block; }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+      width: 30px;
+    }
+
+    .mobile-toggle span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+    }
+
+    .glow-1 {
+      top: 20%;
+      right: 15%;
+      width: 300px;
+      height: 300px;
+      background-color: var(--accent-glow);
+    }
+
+    .glow-2 {
+      bottom: 10%;
+      left: 10%;
+      width: 250px;
+      height: 250px;
+      background-color: rgba(6, 182, 212, 0.08);
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-content {
+      z-index: 10;
+    }
+
+    .hero-subtitle {
+      color: var(--accent-primary);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .highlight-text {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-typewriter {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      height: 40px;
+    }
+
+    #typewriter {
+      color: var(--text-primary);
+      font-weight: 600;
+      border-right: 2px solid var(--accent-primary);
+      padding-right: 4px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: var(--accent-primary); }
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 580px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-card {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px dashed rgba(59, 130, 246, 0.4);
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar-inner {
+      position: relative;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .developer-illustration {
+      width: 80%;
+      height: 80%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ==========================================================================
+       6. ABOUT ME SECTION
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-details h3 {
+      font-size: 1.75rem;
+      margin-bottom: 20px;
+    }
+
+    .about-details p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .languages-box {
+      margin-top: 36px;
+    }
+
+    .languages-box h4 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .lang-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .lang-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .lang-level {
+      font-size: 0.75rem;
+      color: var(--accent-primary);
+      margin-left: 6px;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      align-items: start;
+      transition: var(--transition);
+    }
+
+    .info-card:hover {
+      transform: translateX(10px);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .info-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius-sm);
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .info-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .info-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       7. EDUCATION TIMELINE SECTION
+       ========================================================================== */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 32px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 48px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 8px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 4px solid var(--accent-primary);
+      z-index: 2;
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      background: var(--accent-secondary);
+      transform: scale(1.2);
+    }
+
+    .timeline-date {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--accent-primary);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-institution {
+      font-weight: 500;
+      color: var(--accent-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       8. SKILLS SECTION
+       ========================================================================== */
+    .skills-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .skills-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .skills-col h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent-primary);
+      padding-left: 12px;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent-primary);
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+
+    .border-left-col {
+      border-left: 1px solid var(--border-color);
+      padding-left: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .skills-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .border-left-col {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--border-color);
+        padding-top: 30px;
+      }
+    }
+
+    /* ==========================================================================
+       9. PROJECTS GRID
+       ========================================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-tag {
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent-secondary);
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      align-self: flex-start;
+      margin: 24px 24px 0 24px;
+      border-radius: 30px;
+    }
+
+    .project-content {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .project-tech span {
+      font-size: 0.75rem;
+      background-color: var(--bg-secondary);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       10. CERTIFICATIONS
+       ========================================================================== */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 28px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      align-items: start;
+      transition: var(--transition);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .cert-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .cert-info h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .cert-host {
+      color: var(--accent-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .cert-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================================================
+       11. CONTACT SECTION
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 48px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.75rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-intro {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .info-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-link-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .info-link-item:hover .contact-detail-icon {
+      background: var(--accent-primary);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .contact-detail-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius-sm);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .contact-detail-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .info-link-item span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 2px;
+    }
+
+    .info-link-item strong {
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    /* Contact Form */
+    .contact-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      padding: 40px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+    }
+
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background-color: var(--input-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: var(--border-radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .btn-submit {
+      width: 100%;
+      font-size: 1.05rem;
+      padding: 14px;
+    }
+
+    /* ==========================================================================
+       12. FOOTER
+       ========================================================================== */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      background-color: var(--bg-secondary);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-primary);
+    }
+
+    /* ==========================================================================
+       13. INTERACTIVE MODALS (DEMOS)
+       ========================================================================== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background-color: var(--modal-bg);
+      margin: 8% auto;
+      padding: 32px;
+      border: 1px solid var(--border-color);
+      width: 90%;
+      max-width: 500px;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--card-shadow);
+      position: relative;
+    }
+
+    .modal-large {
+      max-width: 700px;
+    }
+
+    .modal-small {
+      max-width: 380px;
+      padding: 24px;
+    }
+
+    .modal-close {
+      color: var(--text-secondary);
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 24px;
+      top: 16px;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .modal-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .modal-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .demo-container {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: var(--border-radius-sm);
+    }
+
+    /* Checker Demo */
+    .demo-result {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .result-placeholder {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      text-align: center;
+      font-style: italic;
+      padding: 10px 0;
+    }
+
+    .scheme-item {
+      background: var(--bg-card);
+      border-left: 4px solid var(--accent-secondary);
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .scheme-item h5 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .scheme-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .scheme-empty {
+      color: #ef4444;
+      font-weight: 500;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    /* Marks Demo */
+    .mark-input-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr auto;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .mark-input-row input {
+      background-color: var(--input-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 10px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .mark-input-row input:focus {
+      border-color: var(--accent-primary);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    .marks-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .marks-table th,
+    .marks-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .marks-table th {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .grade-s { color: #10b981; font-weight: 700; }
+    .grade-a { color: #3b82f6; font-weight: 700; }
+    .grade-b { color: #f59e0b; font-weight: 700; }
+    .grade-f { color: #ef4444; font-weight: 700; }
+
+    .btn-delete {
+      background: none;
+      border: none;
+      color: #ef4444;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .btn-delete:hover {
+      text-decoration: underline;
+    }
+
+    .marks-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      font-size: 0.85rem;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 16px;
+    }
+
+    .marks-summary strong {
+      color: var(--accent-primary);
+    }
+
+    /* Calculator Demo */
+    .calc-screen {
+      background-color: #0f172a;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: right;
+      font-family: monospace;
+    }
+
+    .calc-history {
+      font-size: 0.85rem;
+      color: #64748b;
+      min-height: 18px;
+      word-wrap: break-word;
+    }
+
+    .calc-display {
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-weight: bold;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .calc-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .btn-calc {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      padding: 12px;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-calc:hover {
+      background-color: var(--border-color);
+    }
+
+    .btn-calc:active {
+      transform: scale(0.95);
+    }
+
+    .btn-scientific {
+      background-color: #1e293b;
+      color: var(--accent-secondary);
+      font-size: 0.9rem;
+    }
+
+    .btn-operator {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+    }
+
+    .btn-operator:hover {
+      background-color: var(--accent-primary);
+      color: white;
+    }
+
+    .btn-clear {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+
+    .btn-clear:hover {
+      background-color: #ef4444;
+      color: white;
+    }
+
+    .btn-equals {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      grid-column: span 1;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #10b981;
+      color: white;
+      padding: 14px 24px;
+      border-radius: var(--border-radius-sm);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-weight: 600;
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scroll Reveal */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsiveness */
+    @media (max-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-ctas {
+        justify-content: center;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0 40px 0;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-typewriter {
+        font-size: 1.4rem;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--bg-secondary);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 80px 40px;
+        gap: 24px;
+        transition: right 0.4s ease-in-out;
+      }
+      .nav-menu.active {
+        right: 0;
+      }
+      .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+      .avatar-card {
+        width: 260px;
+        height: 260px;
+      }
+      .avatar-inner {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas {
+        flex-direction: column;
+      }
+      .mark-input-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================================================
+       14. PRINT SYSTEM (A4 Clean Resume output on Ctrl+P)
+       ========================================================================== */
+    #printable-resume {
+      display: none;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        font-size: 12pt;
+      }
+      
+      /* Hide all web components */
+      #navbar, #hero, #about, #education, #skills, #projects, #certifications, #contact, .footer, .modal, .toast {
+        display: none !important;
+      }
+      
+      /* Display print frame */
+      #printable-resume {
+        display: block !important;
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+      }
+
+      .print-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .print-name {
+        font-family: var(--font-heading);
+        font-size: 24pt;
+        font-weight: 800;
+        color: #0c2340 !important;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 0.05em;
+      }
+
+      .print-contact {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        font-size: 9.5pt;
+        color: #555555;
+        border-top: 1px solid #d1d5db;
+        border-bottom: 1px solid #d1d5db;
+        padding: 6px 0;
+        margin-bottom: 20px;
+      }
+
+      .print-section {
+        margin-bottom: 20px;
+      }
+
+      .print-title-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .print-title {
+        font-family: var(--font-heading);
+        font-size: 11pt;
+        font-weight: 700;
+        color: #0c2340 !important;
+        text-transform: uppercase;
+        margin-right: 10px;
+        white-space: nowrap;
+      }
+
+      .print-divider {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #0c2340;
+      }
+
+      .print-summary {
+        font-size: 10pt;
+        text-align: justify;
+        color: #4b5563;
+      }
+
+      .print-list {
+        list-style-type: none;
+      }
+
+      .print-item {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 6px;
+        font-size: 10pt;
+        color: #4b5563;
+      }
+
+      .print-item::before {
+        content: "•";
+        position: absolute;
+        left: 2px;
+        color: #0c2340;
+        font-weight: bold;
+      }
+
+      .print-lead {
+        font-weight: 700;
+        color: #1f2937;
+      }
+
+      .print-skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .print-skills-sub {
+        font-weight: 600;
+        font-size: 10pt;
+        color: #0c2340;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- ==========================================
+       WEB LAYOUT SECTION (Screen Only)
+       ========================================== -->
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Tamilselvi<span>.S</span></a>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-subtitle">Welcome to my Portfolio</span>
+        <h1 class="hero-title">Hi, I'm <span class="highlight-text">Tamilselvi S</span></h1>
+        <h2 class="hero-typewriter">A Passionate <span id="typewriter"></span></h2>
+        <p class="hero-description">
+          Dedicated Computer Science & Engineering student eager to build a strong career in software development. Focused on creating smart, efficient, and user-centric web applications.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <!-- Direct print trigger instead of static file -->
+          <button onclick="window.print()" class="btn btn-secondary">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Print / Save Resume PDF
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="avatar-card">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <svg viewBox="0 0 200 200" fill="none" class="developer-illustration">
+              <defs>
+                <linearGradient id="avatar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" />
+                  <stop offset="100%" stop-color="#06b6d4" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="90" fill="url(#avatar-grad)" fill-opacity="0.1" stroke="url(#avatar-grad)" stroke-width="2" />
+              <rect x="55" y="70" width="90" height="70" rx="6" fill="#1e293b" stroke="url(#avatar-grad)" stroke-width="3" />
+              <rect x="75" y="140" width="50" height="15" rx="3" fill="#334155" />
+              <line x1="100" y1="140" x2="100" y2="155" stroke="#334155" stroke-width="6" />
+              <circle cx="100" cy="105" r="22" fill="#0f172a" stroke="url(#avatar-grad)" stroke-width="2" stroke-dasharray="4,4" />
+              <text x="35" y="60" fill="#3b82f6" font-family="monospace" font-weight="bold" font-size="14">&lt;code&gt;</text>
+              <text x="125" y="160" fill="#06b6d4" font-family="monospace" font-weight="bold" font-size="14">{ JS }</text>
+              <path d="M85 98l-8 7 8 7M115 98l8 7-8 7M98 115l4-16" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-underline"></div>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-details scroll-reveal">
+          <h3>My Story</h3>
+          <p>
+            I am a dedicated Computer Science & Engineering student at Shree Venkateshwara Hi-Tech Engineering College (Batch 2023-2027). My interest in software engineering drives me to explore coding, web architectures, and algorithms.
+          </p>
+          <p>
+            I possess strong foundational knowledge in programming languages like Java, HTML, CSS, JavaScript, and Python. I love resolving complex challenges and am actively seeking an opportunity to apply my practical skills in a professional software development career.
+          </p>
+          
+          <div class="languages-box">
+            <h4>Languages Known</h4>
+            <div class="lang-badges">
+              <span class="lang-badge">Tamil <span class="lang-level">Native</span></span>
+              <span class="lang-badge">English <span class="lang-level">Professional</span></span>
+              <span class="lang-badge">Kannada <span class="lang-level">Conversational</span></span>
+              <span class="lang-badge">Telugu <span class="lang-level">Conversational</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cards scroll-reveal">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h4>Quick Learner</h4>
+            <p>Eager to grab new technologies, frameworks, and workflows rapidly.</p>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h4>Flexible Team Member</h4>
+            <p>Adaptive to changing project requirements and collaborative environments.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h4>Time Management</h4>
+            <p>Committed to planning milestones and meeting academic and coding deadlines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">Education</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 - 2027</div>
+          <div class="timeline-content">
+            <h3>B.E. in Computer Science & Engineering</h3>
+            <p class="timeline-institution">Shree Venkateshwara Hi-Tech Engineering College</p>
+            <p class="timeline-desc">Acquiring strong foundations in Computer Architecture, Database Systems, Data Structures, Software Engineering, and Practical Web Development.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Completed 2023</div>
+          <div class="timeline-content">
+            <h3>HSC (Higher Secondary Certificate)</h3>
+            <p class="timeline-institution">Government Girls Model Higher Secondary School</p>
+            <p class="timeline-desc">Focused on Mathematics, Physics, Chemistry, and Computer Science. Completed school board exams with distinction.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Completed 2021</div>
+          <div class="timeline-content">
+            <h3>SSLC (Secondary School Leaving Certificate)</h3>
+            <p class="timeline-institution">Kasthuriba Higher Secondary School</p>
+            <p class="timeline-desc">Completed secondary education with high focus on logical subjects and science foundations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">My Skills</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="skills-card scroll-reveal">
+        <div class="skills-columns">
+          <div class="skills-col">
+            <h3>Technical Skills</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript (Js)</span>
+              <span class="skill-tag">Java (Beginner)</span>
+              <span class="skill-tag">Python (Learner)</span>
+            </div>
+          </div>
+          
+          <div class="skills-col border-left-col">
+            <h3>Soft Skills</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Communication Skills</span>
+              <span class="skill-tag">Time Management</span>
+              <span class="skill-tag">Quick Learner</span>
+              <span class="skill-tag">Flexible Person</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">Academic Projects</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card scroll-reveal">
+          <div class="project-tag">Web Development</div>
+          <div class="project-content">
+            <h3>Govt Scheme Eligibility Checker</h3>
+            <p>
+              A website that gathers user profile details (age, annual income, occupation) to match them with suitable welfare schemes. Features a Java backend for filter processing and an intuitive frontend display.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Java</span>
+            </div>
+            <button class="btn btn-card-action" onclick="openDemo('scheme-modal')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-card-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Try Live Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card scroll-reveal">
+          <div class="project-tag">Academic Utility</div>
+          <div class="project-content">
+            <h3>Student Mark List Manager</h3>
+            <p>
+              A clean record tracking tool designed to log subject marks, calculate totals and averages, and award final grades automatically. Helps students monitor academic growth dynamically.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <button class="btn btn-card-action" onclick="openDemo('marks-modal')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-card-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Try Live Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card scroll-reveal">
+          <div class="project-tag">Mathematics</div>
+          <div class="project-content">
+            <h3>Scientific Calculator</h3>
+            <p>
+              A mathematical app developed to carry out arithmetic and advanced scientific calculations such as trigonometry, logarithms, power exponents, and memory values accurately.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <button class="btn btn-card-action" onclick="openDemo('calc-modal')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-card-icon"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Try Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">Certifications & Events</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="certifications-grid">
+        <div class="cert-card scroll-reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+          </div>
+          <div class="cert-info">
+            <h3>Paper Presentation</h3>
+            <p class="cert-host">Erode Sengunthar Engineering College</p>
+            <p class="cert-desc">Presented a research paper highlighting emerging technologies in Computer Science, improving presentation and academic writing skills.</p>
+          </div>
+        </div>
+
+        <div class="cert-card scroll-reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+          </div>
+          <div class="cert-info">
+            <h3>Paper Presentation</h3>
+            <p class="cert-host">Government College of Engineering</p>
+            <p class="cert-desc">Represented the college team in presenting a tech topic, getting peer feedback and expanding technical breadth.</p>
+          </div>
+        </div>
+
+        <div class="cert-card scroll-reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </div>
+          <div class="cert-info">
+            <h3>Technical Workshop</h3>
+            <p class="cert-host">Rathinam Group of Institutions</p>
+            <p class="cert-desc">Engaged in hands-on laboratories focused on software paradigms and web tools, broadening practical engineering knowledge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-underline"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info scroll-reveal">
+          <h3>Let's Connect</h3>
+          <p class="contact-intro">I'm currently seeking internships and entry-level software roles. Reach out via email, phone, or standard mail details listed below.</p>
+          
+          <div class="info-details-list">
+            <a href="tel:+918675297632" class="info-link-item">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <span>Phone Number</span>
+                <strong>+91 8675297632</strong>
+              </div>
+            </a>
+
+            <a href="mailto:selvakum807@gmail.com" class="info-link-item">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <span>Email Address</span>
+                <strong>selvakum807@gmail.com</strong>
+              </div>
+            </a>
+
+            <div class="info-link-item">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <span>Address</span>
+                <strong>3/5A, Pattramangalam, Erode, Tamil Nadu</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card scroll-reveal">
+          <h3>Send a Message</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Tamilselvi S. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">Message sent successfully!</div>
+
+  <!-- ==========================================
+       DEMO MODALS
+       ========================================== -->
+
+  <!-- Project 1 Modal -->
+  <div class="modal" id="scheme-modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeDemo('scheme-modal')">&times;</span>
+      <h3>Govt Scheme Eligibility Checker (Demo)</h3>
+      <p class="modal-description">Fill in details below to find suitable government schemes matching your profile.</p>
+      
+      <div class="demo-container">
+        <div class="form-group">
+          <label for="demo-age">Age (Years)</label>
+          <input type="number" id="demo-age" placeholder="e.g. 21">
+        </div>
+        <div class="form-group">
+          <label for="demo-income">Annual Income (₹)</label>
+          <input type="number" id="demo-income" placeholder="e.g. 150000">
+        </div>
+        <div class="form-group">
+          <label for="demo-occupation">Occupation</label>
+          <select id="demo-occupation">
+            <option value="student">Student</option>
+            <option value="farmer">Farmer</option>
+            <option value="salaried">Salaried Employee</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="business">Business Owner</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="checkSchemes()">Check Eligibility</button>
+        
+        <div class="demo-result" id="scheme-result">
+          <div class="result-placeholder">Enter your details and click Check to see results.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div class="modal" id="marks-modal">
+    <div class="modal-content modal-large">
+      <span class="modal-close" onclick="closeDemo('marks-modal')">&times;</span>
+      <h3>Student Mark List Manager (Demo)</h3>
+      <p class="modal-description">Add subject details to calculate marks, averages, and auto-generated grades.</p>
+      
+      <div class="demo-container">
+        <div class="mark-input-row">
+          <input type="text" id="subject-name" placeholder="Subject (e.g. Data Structures)">
+          <input type="number" id="subject-mark" placeholder="Mark (0-100)" min="0" max="100">
+          <button class="btn btn-secondary" onclick="addSubject()">Add Subject</button>
+        </div>
+        
+        <div class="table-container">
+          <table class="marks-table">
+            <thead>
+              <tr>
+                <th>Subject Name</th>
+                <th>Marks obtained</th>
+                <th>Grade</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="marks-tbody">
+              <tr>
+                <td>Design and Analysis of Algorithms</td>
+                <td>88</td>
+                <td class="grade-a">A</td>
+                <td><button class="btn-delete" onclick="deleteSubjectByIndex(0)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>Java Programming</td>
+                <td>92</td>
+                <td class="grade-s">S</td>
+                <td><button class="btn-delete" onclick="deleteSubjectByIndex(1)">Delete</button></td>
+              </tr>
+              <tr>
+                <td>Web Technology</td>
+                <td>85</td>
+                <td class="grade-a">A</td>
+                <td><button class="btn-delete" onclick="deleteSubjectByIndex(2)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="marks-summary" id="marks-summary">
+          <div>Total Subjects: <strong id="total-subjects">3</strong></div>
+          <div>Total Marks: <strong id="total-marks">265/300</strong></div>
+          <div>Average Marks: <strong id="avg-marks">88.3%</strong></div>
+          <div>Overall Performance: <strong id="overall-grade">Distinction (Grade A)</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 Modal -->
+  <div class="modal" id="calc-modal">
+    <div class="modal-content modal-small">
+      <span class="modal-close" onclick="closeDemo('calc-modal')">&times;</span>
+      <h3>Scientific Calculator (Demo)</h3>
+      <p class="modal-description">A fully functional mathematical and scientific calculator.</p>
+      
+      <div class="demo-container">
+        <div class="calc-screen">
+          <div id="calc-history" class="calc-history"></div>
+          <div id="calc-display" class="calc-display">0</div>
+        </div>
+        <div class="calc-buttons">
+          <button class="btn-calc btn-scientific" onclick="calcScientific('sin')">sin</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('cos')">cos</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('tan')">tan</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('log')">log</button>
+          
+          <button class="btn-calc btn-scientific" onclick="calcScientific('sqrt')">√</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('pow')">xʸ</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('pi')">π</button>
+          <button class="btn-calc btn-scientific" onclick="calcScientific('e')">e</button>
+          
+          <button class="btn-calc btn-clear" onclick="calcClear()">C</button>
+          <button class="btn-calc" onclick="calcInput('(')">(</button>
+          <button class="btn-calc" onclick="calcInput(')')">)</button>
+          <button class="btn-calc btn-operator" onclick="calcInput('/')">/</button>
+          
+          <button class="btn-calc" onclick="calcInput('7')">7</button>
+          <button class="btn-calc" onclick="calcInput('8')">8</button>
+          <button class="btn-calc" onclick="calcInput('9')">9</button>
+          <button class="btn-calc btn-operator" onclick="calcInput('*')">×</button>
+          
+          <button class="btn-calc" onclick="calcInput('4')">4</button>
+          <button class="btn-calc" onclick="calcInput('5')">5</button>
+          <button class="btn-calc" onclick="calcInput('6')">6</button>
+          <button class="btn-calc btn-operator" onclick="calcInput('-')">-</button>
+          
+          <button class="btn-calc" onclick="calcInput('1')">1</button>
+          <button class="btn-calc" onclick="calcInput('2')">2</button>
+          <button class="btn-calc" onclick="calcInput('3')">3</button>
+          <button class="btn-calc btn-operator" onclick="calcInput('+')">+</button>
+          
+          <button class="btn-calc" onclick="calcInput('0')">0</button>
+          <button class="btn-calc" onclick="calcInput('.')">.</button>
+          <button class="btn-calc btn-clear" onclick="calcBackspace()">⌫</button>
+          <button class="btn-calc btn-equals" onclick="calcEquals()">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       15. PRINT LAYOUT STRUCTURE (Hidden on Screen)
+       ========================================== -->
+  <div id="printable-resume">
+    <div class="print-header">
+      <h1 class="print-name">TAMILSELVI S</h1>
+      <div class="print-contact">
+        <span>📞 8675297632</span>
+        <span>✉ selvakum807@gmail.com</span>
+        <span>📍 3/5A, Pattramangalam, Erode</span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Professional Summary</h2>
+        <div class="print-divider"></div>
+      </div>
+      <p class="print-summary">
+        Dedicated CSE student with basic knowledge of programming languages like Java, HTML, CSS, JavaScript (Js), and Python. Eager to learn new technologies and gain practical experience to build a strong career in software development.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Education</h2>
+        <div class="print-divider"></div>
+      </div>
+      <ul class="print-list">
+        <li class="print-item">
+          <span class="print-lead">B.E. in Computer Science & Engineering:</span> Shree Venkateshwara Hi-Tech Engineering College (Batch: 2023–2027)
+        </li>
+        <li class="print-item">
+          <span class="print-lead">HSC:</span> Government Girls Model Higher Secondary School (Completed: 2023)
+        </li>
+        <li class="print-item">
+          <span class="print-lead">SSLC:</span> Kasthuriba Higher Secondary School (Completed: 2021)
+        </li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Skills</h2>
+        <div class="print-divider"></div>
+      </div>
+      <div class="print-skills-grid">
+        <div>
+          <h3 class="print-skills-sub">Technical Skills</h3>
+          <ul class="print-list">
+            <li class="print-item">HTML</li>
+            <li class="print-item">CSS</li>
+            <li class="print-item">JavaScript (Js)</li>
+            <li class="print-item">Java (B - Beginner)</li>
+            <li class="print-item">Python (L - Learner)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="print-skills-sub">Soft Skills</h3>
+          <ul class="print-list">
+            <li class="print-item">Communication Skills</li>
+            <li class="print-item">Time Management</li>
+            <li class="print-item">Quick Learner</li>
+            <li class="print-item">Flexible Person</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Projects</h2>
+        <div class="print-divider"></div>
+      </div>
+      <ul class="print-list">
+        <li class="print-item">
+          <span class="print-lead">Government Scheme Eligibility Checker:</span> A website that collects user details (age, income, occupation) to find suitable government schemes. It uses a Java backend to process data and automatically display eligible schemes.
+        </li>
+        <li class="print-item">
+          <span class="print-lead">Student Mark List Management System:</span> A structured record application that displays subject-wise marks, totals, averages, and grades to help track and analyze academic performance.
+        </li>
+        <li class="print-item">
+          <span class="print-lead">Scientific Calculator:</span> A project developed to perform both basic arithmetic and advanced calculations like trigonometry, logarithms, and exponents accurately.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Certifications</h2>
+        <div class="print-divider"></div>
+      </div>
+      <ul class="print-list">
+        <li class="print-item">Participated in a Paper Presentation at Erode Sengunthar Engineering College</li>
+        <li class="print-item">Participated in a Paper Presentation at Government College of Engineering</li>
+        <li class="print-item">Participated in a Workshop at Rathinam Group of Institutions</li>
+      </ul>
+    </div>
+
+    <!-- Languages Known -->
+    <div class="print-section">
+      <div class="print-title-row">
+        <h2 class="print-title">Languages Known</h2>
+        <div class="print-divider"></div>
+      </div>
+      <ul class="print-list">
+        <li class="print-item">English</li>
+        <li class="print-item">Tamil</li>
+        <li class="print-item">Kannada</li>
+        <li class="print-item">Telugu</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       JAVASCRIPT LOGIC
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Navbar & Theme Toggle elements
+      const navbar = document.getElementById('navbar');
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const mobileToggleBtn = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      // Sticky Navbar
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile Menu
+      mobileToggleBtn.addEventListener('click', () => {
+        mobileToggleBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggleBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // Theme toggle initialization
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      document.body.className = `${currentTheme}-theme`;
+
+      themeToggleBtn.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-theme')) {
+          document.body.classList.replace('dark-theme', 'light-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.body.classList.replace('light-theme', 'dark-theme');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // Typewriter Effect
+      const typewriterSpan = document.getElementById('typewriter');
+      const words = ['Computer Science & Engineering Student', 'Aspiring Software Developer', 'Java & Web Developer', 'Tech Enthusiast'];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          charIndex--;
+          typingSpeed = 50;
+        } else {
+          charIndex++;
+          typingSpeed = 100;
+        }
+
+        typewriterSpan.textContent = currentWord.substring(0, charIndex);
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typingSpeed = 1500;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typingSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typingSpeed);
+      }
+
+      if (typewriterSpan) {
+        typeEffect();
+      }
+
+      // Scroll Reveal triggers
+      const revealElements = document.querySelectorAll('.scroll-reveal');
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // Contact Form submit
+      const contactForm = document.getElementById('contact-form');
+      const toast = document.getElementById('toast');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('form-name').value;
+          const email = document.getElementById('form-email').value;
+          const msg = document.getElementById('form-message').value;
+
+          if(name && email && msg) {
+            toast.classList.add('show');
+            contactForm.reset();
+            setTimeout(() => {
+              toast.classList.remove('show');
+            }, 3000);
+          }
+        });
+      }
+
+    });
+
+    // Modal Control
+    function openDemo(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDemo(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('click', (event) => {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+
+    // P1: Scheme eligibility matching
+    function checkSchemes() {
+      const ageVal = document.getElementById('demo-age').value;
+      const incomeVal = document.getElementById('demo-income').value;
+      const occupation = document.getElementById('demo-occupation').value;
+      const resultDiv = document.getElementById('scheme-result');
+
+      if (!ageVal || !incomeVal) {
+        resultDiv.innerHTML = '<div class="scheme-empty">Please enter your age and annual income.</div>';
+        return;
+      }
+
+      const age = parseInt(ageVal);
+      const income = parseInt(incomeVal);
+      let schemes = [];
+
+      if (age >= 18 && occupation === 'student' && income <= 250000) {
+        schemes.push({
+          name: "Post-Matric Scholarship Scheme",
+          desc: "Provides financial aid to backward class and minority students to pursue B.E. and other higher education courses."
+        });
+      }
+      if (occupation === 'farmer' && income <= 300000) {
+        schemes.push({
+          name: "PM-KISAN Samman Nidhi & Crop Loan Subvention",
+          desc: "Assistance scheme for agricultural support offering income subsidies and zero-interest crop credits."
+        });
+      }
+      if (age >= 60 && income <= 150000) {
+        schemes.push({
+          name: "Indira Gandhi National Old Age Pension Scheme",
+          desc: "Monthly state pension support for elderly citizens living under marginalized conditions."
+        });
+      }
+      if (occupation === 'student') {
+        schemes.push({
+          name: "Tamil Nadu Government Free Laptop & Merit Scheme",
+          desc: "Distributes learning aids and calculators to engineering students with a household income filter."
+        });
+      }
+      if (income <= 200000) {
+        schemes.push({
+          name: "Pradhan Mantri Awas Yojana (Housing Subsidy)",
+          desc: "Credit-linked interest subsidy scheme for building or buying affordable houses."
+        });
+      }
+      if (income <= 300000) {
+        schemes.push({
+          name: "Prime Minister Ayushman Bharat Health Insurance",
+          desc: "Covers family hospitalization and critical healthcare costs up to ₹5 Lakhs per family annually."
+        });
+      }
+
+      if (schemes.length === 0) {
+        resultDiv.innerHTML = '<div class="scheme-empty">No specific schemes matched this profile. Standard scholarships and State level welfare aids are applicable.</div>';
+      } else {
+        let html = `<h4>Matched Schemes (${schemes.length}):</h4>`;
+        schemes.forEach(s => {
+          html += `
+            <div class="scheme-item">
+              <h5>${s.name}</h5>
+              <p>${s.desc}</p>
+            </div>
+          `;
+        });
+        resultDiv.innerHTML = html;
+      }
+    }
+
+    // P2: Subject Grade Manager
+    let studentSubjects = [
+      { name: "Design and Analysis of Algorithms", mark: 88, grade: "A" },
+      { name: "Java Programming", mark: 92, grade: "S" },
+      { name: "Web Technology", mark: 85, grade: "A" }
+    ];
+
+    function recalculateMarks() {
+      const tbody = document.getElementById('marks-tbody');
+      tbody.innerHTML = '';
+      let total = 0;
+      
+      studentSubjects.forEach((sub, index) => {
+        total += sub.mark;
+        let gradeClass = 'grade-b';
+        if (sub.grade === 'S') gradeClass = 'grade-s';
+        else if (sub.grade === 'A') gradeClass = 'grade-a';
+        else if (sub.grade === 'F') gradeClass = 'grade-f';
+
+        tbody.innerHTML += `
+          <tr>
+            <td>${sub.name}</td>
+            <td>${sub.mark}</td>
+            <td class="${gradeClass}">${sub.grade}</td>
+            <td><button class="btn-delete" onclick="deleteSubjectByIndex(${index})">Delete</button></td>
+          </tr>
+        `;
+      });
+
+      const count = studentSubjects.length;
+      const totalVal = document.getElementById('total-subjects');
+      const marksVal = document.getElementById('total-marks');
+      const avgVal = document.getElementById('avg-marks');
+      const gradeVal = document.getElementById('overall-grade');
+
+      if (count === 0) {
+        totalVal.textContent = '0';
+        marksVal.textContent = '0/0';
+        avgVal.textContent = '0%';
+        gradeVal.textContent = 'N/A';
+        return;
+      }
+
+      const maxPossible = count * 100;
+      const avg = (total / count).toFixed(1);
+      
+      totalVal.textContent = count;
+      marksVal.textContent = `${total}/${maxPossible}`;
+      avgVal.textContent = `${avg}%`;
+
+      let overall = 'Fail (Grade F)';
+      if (avg >= 90) overall = 'Outstanding (Grade S)';
+      else if (avg >= 80) overall = 'Distinction (Grade A)';
+      else if (avg >= 70) overall = 'First Class (Grade B)';
+      else if (avg >= 50) overall = 'Pass Class (Grade C)';
+      
+      gradeVal.textContent = overall;
+    }
+
+    function addSubject() {
+      const nameInput = document.getElementById('subject-name');
+      const markInput = document.getElementById('subject-mark');
+      const name = nameInput.value.trim();
+      const markText = markInput.value;
+
+      if (!name || !markText) {
+        alert('Please enter both subject name and marks obtained.');
+        return;
+      }
+
+      const mark = parseInt(markText);
+      if (mark < 0 || mark > 100 || isNaN(mark)) {
+        alert('Please enter a valid mark between 0 and 100.');
+        return;
+      }
+
+      let grade = 'F';
+      if (mark >= 90) grade = 'S';
+      else if (mark >= 80) grade = 'A';
+      else if (mark >= 60) grade = 'B';
+      else if (mark >= 50) grade = 'C';
+
+      studentSubjects.push({ name, mark, grade });
+      nameInput.value = '';
+      markInput.value = '';
+      recalculateMarks();
+    }
+
+    function deleteSubjectByIndex(index) {
+      studentSubjects.splice(index, 1);
+      recalculateMarks();
+    }
+
+    // P3: Scientific Calculator
+    let calcVal = '0';
+    let isNewInput = true;
+    const calcDisplay = document.getElementById('calc-display');
+    const calcHistory = document.getElementById('calc-history');
+
+    function updateCalcDisplay() {
+      if (calcDisplay) calcDisplay.textContent = calcVal;
+    }
+
+    function calcInput(char) {
+      if (isNewInput) {
+        if (char === '.' || char === '+' || char === '-' || char === '*' || char === '/') {
+          calcVal = '0' + char;
+        } else {
+          calcVal = char;
+        }
+        isNewInput = false;
+      } else {
+        if (calcVal === '0' && char !== '.') {
+          calcVal = char;
+        } else {
+          calcVal += char;
+        }
+      }
+      updateCalcDisplay();
+    }
+
+    function calcClear() {
+      calcVal = '0';
+      if (calcHistory) calcHistory.textContent = '';
+      isNewInput = true;
+      updateCalcDisplay();
+    }
+
+    function calcBackspace() {
+      if (calcVal.length <= 1) {
+        calcVal = '0';
+        isNewInput = true;
+      } else {
+        calcVal = calcVal.slice(0, -1);
+      }
+      updateCalcDisplay();
+    }
+
+    function calcEquals() {
+      if (calcHistory) calcHistory.textContent = calcVal + ' =';
+      try {
+        let expression = calcVal.replace(/×/g, '*');
+        if (/^[0-9+\-*/().\s]+$/.test(expression)) {
+          let result = eval(expression);
+          if (result % 1 !== 0) {
+            result = parseFloat(result.toFixed(6));
+          }
+          calcVal = String(result);
+        } else {
+          calcVal = 'Error';
+        }
+      } catch (err) {
+        calcVal = 'Error';
+      }
+      isNewInput = true;
+      updateCalcDisplay();
+    }
+
+    function calcScientific(func) {
+      try {
+        let currentNum = parseFloat(calcVal);
+        if (isNaN(currentNum)) {
+          calcEquals();
+          currentNum = parseFloat(calcVal);
+          if (isNaN(currentNum)) return;
+        }
+
+        let result = 0;
+        let desc = '';
+
+        switch (func) {
+          case 'sin':
+            result = Math.sin(currentNum * Math.PI / 180);
+            desc = `sin(${currentNum}°)`;
+            break;
+          case 'cos':
+            result = Math.cos(currentNum * Math.PI / 180);
+            desc = `cos(${currentNum}°)`;
+            break;
+          case 'tan':
+            result = Math.tan(currentNum * Math.PI / 180);
+            desc = `tan(${currentNum}°)`;
+            break;
+          case 'log':
+            if (currentNum <= 0) {
+              calcVal = 'Error';
+              updateCalcDisplay();
+              return;
+            }
+            result = Math.log10(currentNum);
+            desc = `log10(${currentNum})`;
+            break;
+          case 'sqrt':
+            if (currentNum < 0) {
+              calcVal = 'Error';
+              updateCalcDisplay();
+              return;
+            }
+            result = Math.sqrt(currentNum);
+            desc = `√(${currentNum})`;
+            break;
+          case 'pow':
+            calcVal += '**';
+            isNewInput = false;
+            updateCalcDisplay();
+            return;
+          case 'pi':
+            result = Math.PI;
+            desc = 'π';
+            break;
+          case 'e':
+            result = Math.E;
+            desc = 'e';
+            break;
+          default:
+            return;
+        }
+
+        if (result % 1 !== 0) {
+          result = parseFloat(result.toFixed(6));
+        }
+
+        if (calcHistory) calcHistory.textContent = desc + ' =';
+        calcVal = String(result);
+        isNewInput = true;
+        updateCalcDisplay();
+      } catch (err) {
+        calcVal = 'Error';
+        updateCalcDisplay();
+      }
+    }
+  </script>
+</body>
+</html>
